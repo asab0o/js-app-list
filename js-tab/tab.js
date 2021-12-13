@@ -15,9 +15,15 @@
   // クリックイベント
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e);
+    const $this = e.target;
+    //datesetはdata属性の値
+    const targetVal = $this.dataset.nav;
+
+    //対象のコンテンツをアクティブ化
+    $tab.querySelectorAll('[data-content="' + targetVal + '"]')[0].style.display = 'block'
   }
 
+  //前nav要素に対して関数を適用、発火
   const navNum = $nav.length;     
   for (let i = 0; i < navNum; i++) {
     $nav[i].addEventListener('click', (e) => handleClick(e));

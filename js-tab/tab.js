@@ -12,4 +12,16 @@
   };
   init();
 
+  // クリックイベント
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(e);
+  }
+
+  const navNum = $nav.length;     
+  for (let i = 0; i < navNum; i++) {
+    $nav[i].addEventListener('click', (e) => handleClick(e));
+    // console.log($nav[0]);
+  }
+
 })();
